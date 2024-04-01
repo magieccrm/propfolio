@@ -138,7 +138,7 @@ function Home() {
                 <div className="cardbox02">
                   <div className="panel-body new_leads bd-panel">
                     <h2>New Lead</h2>
-                    <p>16</p>
+                    <p>0</p>
                   </div>
                   <div className="lead_img  align-items-center">
                     <img src="dist/img/Capture_Leads.png" />
@@ -149,7 +149,7 @@ function Home() {
                 <div className="cardbox02">
                   <div className="panel-body new_leads bd-panel">
                     <h2>UnAssigned Lead</h2>
-                    <p>60</p>
+                    <p>0</p>
                   </div>
                   <div className="lead_img  align-items-center">
                     <img src="dist/img/lead_img.png" />
