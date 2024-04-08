@@ -1,5 +1,6 @@
 import React from "react";
 import LineChart1 from "../LineChart1";
+import randomcolor from 'randomcolor';
 import Chart from "react-apexcharts";
 import { useState } from "react";
 import axios from "axios";
@@ -124,8 +125,10 @@ export default function Callreport() {
       }),
     },
   ];
+  const colors = randomcolor({ count: data1.length });
   const options = {
     labels: data,
+    colors: colors,
   };
   const customStyles = {
     cells: {

@@ -1,6 +1,6 @@
 import { Tooltip } from "bootstrap";
 import React, { useState } from "react";
-
+import randomcolor from 'randomcolor';
 import { Link } from "react-router-dom";
 import LineChart from "./LineChart";
 import LineChart1 from "./LineChart1";
@@ -124,8 +124,11 @@ function Home() {
     getLeadCountData();
     getAllLeadSourceOverview()
   }, []);
+
+  const colors = randomcolor({ count: leadsourcedata1.length });
   const options = {
     labels: leadsource,
+    colors: colors,
   };
   return (
     <div>
@@ -138,7 +141,7 @@ function Home() {
                 <div className="cardbox02">
                   <div className="panel-body new_leads bd-panel">
                     <h2>New Lead</h2>
-                    <p>0</p>
+                    <p>16</p>
                   </div>
                   <div className="lead_img  align-items-center">
                     <img src="dist/img/Capture_Leads.png" />
@@ -149,7 +152,7 @@ function Home() {
                 <div className="cardbox02">
                   <div className="panel-body new_leads bd-panel">
                     <h2>UnAssigned Lead</h2>
-                    <p>0</p>
+                    <p>60</p>
                   </div>
                   <div className="lead_img  align-items-center">
                     <img src="dist/img/lead_img.png" />

@@ -11,7 +11,7 @@ import { getAllLeadSource } from "../../features/leadSource";
 import { getAllStatus } from "../../features/statusSlice";
 import DataTable from "react-data-table-component";
 import toast from "react-hot-toast";
-
+import randomcolor from 'randomcolor';
 export default function Incomereport() {
   const apiUrl = process.env.REACT_APP_API_URL;
   const DBuUrl = process.env.REACT_APP_DB_URL;
@@ -28,7 +28,7 @@ export default function Incomereport() {
   const [llll1, setllll1] = useState('none');
   const getAllLeadSourceOverview1 = async () => {
     try {
-      const responce = await axios.get(
+      const responce = await axios.post(
         `${apiUrl}/EmployeesReportDetail`, {
         headers: {
           "Content-Type": "application/json",
@@ -47,24 +47,57 @@ export default function Incomereport() {
       console.log(error);
     }
   }
+  const getAllLeadSourceOverview2 = async () => {
+    try {
+      const response = await axios.post(
+        `${apiUrl}/EmployeesReportDetail`,
+        { assign_to_agent: localStorage.getItem('user_id') },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'mongodb-url': DBuUrl,
+          },
+        }
+      );
+  
+      setleadsourcedata(response?.data?.value);
+      setleadsource(response?.data?.name);
+    } catch (error) {
+      const message = error?.response?.data?.message;
+      if (
+        message === 'Client must be connected before running operations' ||
+        message === 'Internal Server Error'
+      ) {
+        getAllLeadSourceOverview2();
+      }
+      console.error(error);
+    }
+  };
+  
   useEffect(() => {
-    getAllLeadSourceOverview1();
+   
+
     dispatch(getAllProductService());
     dispatch(getAllLeadSource());
     // dispatch(getAllAgent());
     dispatch(getAllStatus());
     if(localStorage.getItem("role")==='admin'){
       dispatch(getAllAgent());
+      getAllLeadSourceOverview1();
      }
      if (localStorage.getItem("role") === "TeamLeader") {
       dispatch(getAllAgentWithData({assign_to_agent:localStorage.getItem("user_id")}));
+      getAllLeadSourceOverview2({assign_to_agent:localStorage.getItem("user_id")});
     }
     if(localStorage.getItem("role")==='user'){
       dispatch(getAllAgent({assign_to_agent:localStorage.getItem("user_id")}));
      }
   }, []);
+  
+  const colors = randomcolor({ count: leadsourcedata1.length });
   const options = {
     labels: leadsource,
+    colors: colors,
   };
 
 
