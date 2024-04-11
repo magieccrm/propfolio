@@ -539,7 +539,7 @@ function Home() {
             </div>
 
             <div className="row">
-              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 pl-0">
+              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 pl-0 d-none">
                 <div className="panel panel-bd  bg-white">
                   <div className="panel-heading">
                     <div className="panel-title   d-flex justify-content-between">
