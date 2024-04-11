@@ -245,7 +245,7 @@ function SideNav() {
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item d-none">
                   <Link to="#" className="nav-link " onClick={callManage}>
                     <i className="nav-icon fas fa fa fa-cog" />
                     Call Manage
@@ -404,7 +404,7 @@ function SideNav() {
                         <p>Manage Report</p>  
                       </a>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item d-none">
                       <a href="javascript:void(0);" className={activeItem === 'Callreport' ? 'nav-link active' : 'nav-link'}
                         onClick={() => handleItemClick('Callreport')}>
                         <p>Callreport</p>
@@ -472,7 +472,7 @@ function SideNav() {
                     </ul>
                   </li>
 
-                  <li className="nav-item">
+                  <li className="nav-item d-none">
                     <Link to="#" className="nav-link" onClick={callManage}>
                       <i className="nav-icon fas fa fa fa-cog" />
                       Call  Manage
@@ -541,7 +541,7 @@ function SideNav() {
                     </li> */}
                   </ul>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item d-none">
                   <Link to="#" className="nav-link" onClick={callManage}>
                     <i className="nav-icon fas fa fa fa-cog" />
                     Call Manage
@@ -662,7 +662,7 @@ function SideNav() {
                         <p>Manage Report</p>  
                       </a>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item d-none">
                       <a href="javascript:void(0);" className={activeItem === 'Callreport' ? 'nav-link active' : 'nav-link'}
                         onClick={() => handleItemClick('Callreport')}>
                         <p>Callreport</p>
