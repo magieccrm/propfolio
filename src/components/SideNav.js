@@ -4,7 +4,7 @@ import companyLogo from "./avatar5.png";
 function SideNav() {
   ////// Hide And Show/////
   const [line, setline] = useState("none");
-  const [lead1, setlead] = useState("none");
+  const [lead1, setlead] = useState("block");
   const [callManageshow, setcallManageshow] = useState("none");
   const [sms, setsms] = useState("none");
   const [wtsp, setwtsp] = useState("none");
@@ -243,9 +243,18 @@ function SideNav() {
                         <p> New Leads</p>
                       </a>
                     </li>
+
+                    <li className="nav-item">
+                      <a href="javascript:void(0);" className={activeItem === 'importedlead' ? 'nav-link active' : 'nav-link'}
+                        onClick={() => handleItemClick('importedlead')}>
+                        <p> Imported Lead</p>
+                      </a>
+                    </li>
+
+
                   </ul>
                 </li>
-                <li className="nav-item d-none">
+                <li className="nav-item">
                   <Link to="#" className="nav-link " onClick={callManage}>
                     <i className="nav-icon fas fa fa fa-cog" />
                     Call Manage
@@ -335,6 +344,13 @@ function SideNav() {
                       </a>
                     </li>
 
+                    <li className="nav-item">
+                      <a href="javascript:void(0);" className={activeItem === 'BusinessWA' ? 'nav-link active' : 'nav-link'}
+                        onClick={() => handleItemClick('BusinessWA')}>
+                        <p>Business WA</p>
+                      </a>
+                    </li>
+
                     {/* <li className="nav-item">
                   <a   href="javascript:void(0);" className={activeItem === 'buysms' ? 'nav-link active' : 'nav-link'}
                   onClick={() => handleItemClick('buysms')}>
@@ -404,7 +420,7 @@ function SideNav() {
                         <p>Manage Report</p>  
                       </a>
                     </li>
-                    <li className="nav-item d-none">
+                    <li className="nav-item">
                       <a href="javascript:void(0);" className={activeItem === 'Callreport' ? 'nav-link active' : 'nav-link'}
                         onClick={() => handleItemClick('Callreport')}>
                         <p>Callreport</p>
@@ -469,10 +485,24 @@ function SideNav() {
                         </a>
                       </li>
 
+                      <li className="nav-item">
+                      <a href="javascript:void(0);" className={activeItem === 'newlead' ? 'nav-link active' : 'nav-link'}
+                        onClick={() => handleItemClick('newlead')}>
+                        <p> New Leads</p>
+                      </a>
+                    </li>
+
+                      <li className="nav-item">
+                      <a href="javascript:void(0);" className={activeItem === 'importedlead' ? 'nav-link active' : 'nav-link'}
+                        onClick={() => handleItemClick('importedlead')}>
+                        <p> Imported Lead</p>
+                      </a>
+                    </li>
+
                     </ul>
                   </li>
 
-                  <li className="nav-item d-none">
+                  <li className="nav-item" style={{ display:'none' }}>
                     <Link to="#" className="nav-link" onClick={callManage}>
                       <i className="nav-icon fas fa fa fa-cog" />
                       Call  Manage
@@ -533,6 +563,20 @@ function SideNav() {
                       </a>
                     </li>
 
+                    <li className="nav-item">
+                      <a href="javascript:void(0);" className={activeItem === 'newlead' ? 'nav-link active' : 'nav-link'}
+                        onClick={() => handleItemClick('newlead')}>
+                        <p> New Leads</p>
+                      </a>
+                    </li>
+
+                    <li className="nav-item">
+                      <a href="javascript:void(0);" className={activeItem === 'importedlead' ? 'nav-link active' : 'nav-link'}
+                        onClick={() => handleItemClick('importedlead')}>
+                        <p> Imported Lead</p>
+                      </a>
+                    </li>
+
                     {/* <li className="nav-item">
                       <a href="javascript:void(0);" className={activeItem === 'newlead' ? 'nav-link active' : 'nav-link'}
                         onClick={() => handleItemClick('newlead')}>
@@ -541,10 +585,10 @@ function SideNav() {
                     </li> */}
                   </ul>
                 </li>
-                <li className="nav-item d-none">
+                <li className="nav-item" >
                   <Link to="#" className="nav-link" onClick={callManage}>
                     <i className="nav-icon fas fa fa fa-cog" />
-                    Call Manage
+                    Call Manage 
                     <i className="fas fa-angle-left right" />
                   </Link>
                   <ul className="nav nav-treeview" style={{ display: callManageshow }}>
@@ -662,7 +706,7 @@ function SideNav() {
                         <p>Manage Report</p>  
                       </a>
                     </li>
-                    <li className="nav-item d-none">
+                    <li className="nav-item">
                       <a href="javascript:void(0);" className={activeItem === 'Callreport' ? 'nav-link active' : 'nav-link'}
                         onClick={() => handleItemClick('Callreport')}>
                         <p>Callreport</p>

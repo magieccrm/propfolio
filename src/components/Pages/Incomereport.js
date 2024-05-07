@@ -401,7 +401,7 @@ export default function Incomereport() {
                             fixedHeaderScrollHeight="550px"
                             selectableRowsHighlight
                             highlightOnHover
-                            subHeader
+                            subHeader   
                             customStyles={customStyles}
                           />
                         </div>
